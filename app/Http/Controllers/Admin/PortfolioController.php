@@ -47,7 +47,7 @@ class PortfolioController extends Controller
      */
     public function show(Portfolio $portfolio)
     {
-        //
+        return view('admin.show', compact('portfolio'));
     }
 
     /**
@@ -58,7 +58,8 @@ class PortfolioController extends Controller
      */
     public function edit(Portfolio $portfolio)
     {
-        //
+        return view('admin.edit', compact('portfolio'));
+        
     }
 
     /**
@@ -70,7 +71,12 @@ class PortfolioController extends Controller
      */
     public function update(UpdatePortfolioRequest $request, Portfolio $portfolio)
     {
-        //
+        $data = $request->validated();
+        $portfolio->fill($data);
+        $portfolio->update();
+
+        return view('admin.show', compact('portfolio'));
+
     }
 
     /**
@@ -81,6 +87,7 @@ class PortfolioController extends Controller
      */
     public function destroy(Portfolio $portfolio)
     {
-        //
+        $portfolio->delete();
+        return redirect()->route('admin.dashboard');
     }
 }
