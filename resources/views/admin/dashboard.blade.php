@@ -3,6 +3,7 @@
 @section('content')
 <div class="container mt-4">
     <h1 class="text-center">I Miei Progetti</h1>
+    <a class="btn btn-primary m-5" href="{{route('admin.portfolios.create')}}">Nuovo Progetto</a>
     <div class="row justify-content-center">
         <div class="col-md-8 d-flex flex-wrap big_container">
             @foreach ($portfolio as $item)

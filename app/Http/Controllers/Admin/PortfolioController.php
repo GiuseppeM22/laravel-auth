@@ -25,7 +25,8 @@ class PortfolioController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.create');
+
     }
 
     /**
@@ -36,7 +37,13 @@ class PortfolioController extends Controller
      */
     public function store(StorePortfolioRequest $request)
     {
-        //
+        $data = $request->validated();
+
+        $newProject = new Portfolio();
+        $newProject->fill($data);
+        $newProject->save();
+
+        return redirect()->route('admin.dashboard', $newProject->id);
     }
 
     /**

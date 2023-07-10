@@ -5,9 +5,7 @@
  
  /* ... */
 
- Route::get('/', function () {
- 	return view('welcome');
- });
+ Route::get('/', [DashboardController::class, 'index']);
 
  Route::middleware(['auth'])
  	->prefix('admin') //definisce il prefisso "admin/" per le rotte di questo gruppo
