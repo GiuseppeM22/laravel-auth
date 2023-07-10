@@ -13,6 +13,12 @@
                         {{ session('status') }}
                     </div>
                     @endif
+                    @foreach ($portfolio as $item)
+                        <div class="container">
+                            <h1>{{$item->name}}</h1>
+                        </div>
+                    @endforeach
+                   
 
                     {{ __('You are logged in!') }}
                 </div>

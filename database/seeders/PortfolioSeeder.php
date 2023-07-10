@@ -16,6 +16,7 @@ class PortfolioSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
+
         for ($i=0; $i < 10; $i++) { 
             $portfolio = new Portfolio();
             $portfolio->name = $faker->sentence(3);
