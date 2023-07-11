@@ -4,7 +4,7 @@
 <div class="container my-3">
     <h1>Modificare Progetto n°{{$portfolio->id}}</h1>
     <div class="row g-4 py-4">
-        {{-- @if ($errors->any())
+        @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
                 @foreach ($errors->all() as $error)
@@ -12,7 +12,7 @@
                 @endforeach
             </ul>
         </div>
-        @endif --}}
+        @endif
         <div class="col">
             <form action="{{ route('admin.portfolios.update', $portfolio) }}" method="post">
                 @csrf

@@ -25,7 +25,7 @@ class StorePortfolioRequest extends FormRequest
     {
         return [
             "name"=>"required",
-            "image"=>"required",
+            "image"=>"nullable",
             "description"=>"required",
             "link"=>"required"
         ];
